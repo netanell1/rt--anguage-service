@@ -6,7 +6,7 @@
     "type": "git"
   },
   "description": "Provides auto-completions and validation for react-cli-rt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.93.0"
   },
