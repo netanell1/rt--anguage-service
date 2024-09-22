@@ -62,12 +62,8 @@ export function activate(context: vscode.ExtensionContext) {
 			while ((match = regex.exec(lineText)) !== null) {
 				const innerText = match[1].trim();
 				let allowedNames;
+				allowedNames = ['functionName', 'componentName', 'styleFileName'];
 
-				if (languageId === 'component-rt') {
-					allowedNames = ['functionName', 'componentName'];
-				} else if (languageId === 'style-rt') {
-					allowedNames = ['className', 'idName'];
-				}
 
 				// Validate if the text inside {{ }} is one of the allowed names
 				if (!allowedNames.includes(innerText)) {
