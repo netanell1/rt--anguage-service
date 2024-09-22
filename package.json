@@ -6,6 +6,7 @@
     "type": "git"
   },
   "icon": "assets/icon.jpeg",
+  "publisher": "netanel",
   "description": "Provides auto-completions and validation for react-cli-rt",
   "version": "1.0.0",
   "engines": {
