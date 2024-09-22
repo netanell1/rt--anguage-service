@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "React CLI RT Configuration",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "enum": [
+        "js",
+        "ts"
+      ],
+      "description": "The language to use, either 'js' or 'ts'."
+    },
+    "style": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "css",
+            "scss",
+            "sass",
+            "less"
+          ],
+          "description": "The style format to use. Choose from predefined options."
+        },
+        {
+          "type": "string",
+          "description": "Any other custom style format."
+        }
+      ]
+    },
+    "moduleStyle": {
+      "type": "boolean",
+      "description": "Whether to use CSS modules."
+    },
+    "componentFileFormat": {
+      "type": "string",
+      "enum": [
+        "function",
+        "const"
+      ],
+      "description": "Defines the format of component files."
+    },
+    "componentFileName": {
+      "type": "string",
+      "description": "Optional custom name for the component file."
+    },
+    "styleFileName": {
+      "type": "string",
+      "description": "Optional custom name for the style file."
+    },
+    "modelSuffix": {
+      "type": "boolean",
+      "description": "Whether to use a model suffix."
+    }
+  },
+  "required": [
+    "language",
+    "style",
+    "moduleStyle",
+    "componentFileFormat"
+  ]
+}

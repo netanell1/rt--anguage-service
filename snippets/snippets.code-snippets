@@ -1,0 +1,14 @@
+{
+    "Component Template": {
+      "prefix": "template",
+      "body": [
+        "export default function {{functionName}} ({}) {",
+        "  return (",
+        "    <p> {{componentName}} works!</p>",
+        "  );",
+        "};"
+      ],
+      "description": "Insert a component template"
+    }
+  }
+  

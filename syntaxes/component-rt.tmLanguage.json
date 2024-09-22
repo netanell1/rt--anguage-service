@@ -1,0 +1,20 @@
+{
+  "scopeName": "source.component-rt",
+  "patterns": [
+    {
+      "begin": "\\{\\{",
+      "end": "\\}\\}",
+      "name": "meta.template",
+      "patterns": [
+        {
+          "match": "\\b(functionName|componentName|styleFileName)\\b",
+          "name": "variable.name"
+        },
+        {
+          "match": "\\b[a-zA-Z_]+\\b",
+          "name": "invalid"
+        }
+      ]
+    }
+  ]
+}
