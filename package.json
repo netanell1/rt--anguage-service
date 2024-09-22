@@ -8,7 +8,7 @@
   "icon": "assets/icon.jpeg",
   "publisher": "netanel",
   "description": "Provides auto-completions and validation for react-cli-rt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.93.0"
   },
