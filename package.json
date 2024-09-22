@@ -1,6 +1,10 @@
 {
   "name": "rt-language-service",
   "displayName": "rt language service",
+  "repository": {
+    "url": "https://github.com/netanell1/rt-language-service",
+    "type": "git"
+  },
   "description": "Provides auto-completions and validation for react-cli-rt",
   "version": "0.0.1",
   "engines": {
