@@ -11,7 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 				const completionItems = [
 					new vscode.CompletionItem('functionName', vscode.CompletionItemKind.Variable),
-					new vscode.CompletionItem('componentName', vscode.CompletionItemKind.Variable)
+					new vscode.CompletionItem('componentName', vscode.CompletionItemKind.Variable),
+					new vscode.CompletionItem('styleFileName', vscode.CompletionItemKind.Variable)
 				];
 				return completionItems;
 			}
