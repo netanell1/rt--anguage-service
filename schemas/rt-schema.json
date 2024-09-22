@@ -12,22 +12,8 @@
       "description": "The language to use, either 'js' or 'ts'."
     },
     "style": {
-      "oneOf": [
-        {
-          "type": "string",
-          "enum": [
-            "css",
-            "scss",
-            "sass",
-            "less"
-          ],
-          "description": "The style format to use. Choose from predefined options."
-        },
-        {
-          "type": "string",
-          "description": "Any other custom style format."
-        }
-      ]
+      "type": "string",
+      "description": "The style format to use. Choose from predefined options."
     },
     "moduleStyle": {
       "type": "boolean",
