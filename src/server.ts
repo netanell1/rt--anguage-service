@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
     // Completion item provider for {{functionName}} and {{componentName}}
-    context.subscriptions.push(vscode.languages.registerCompletionItemProvider('component-rt', {
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider('template-rt', {
         provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
             const line = document.lineAt(position).text;
             const openingBrackets = line.indexOf('{{');
@@ -12,7 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
             if (openingBrackets >= 0 && closingBrackets > position.character) {
                 const functionNameCompletion = new vscode.CompletionItem('functionName', vscode.CompletionItemKind.Variable);
                 const componentNameCompletion = new vscode.CompletionItem('componentName', vscode.CompletionItemKind.Variable);
-                return [functionNameCompletion, componentNameCompletion];
+                const styleFileNameCompletion = new vscode.CompletionItem('styleFileName', vscode.CompletionItemKind.Variable)
+                return [functionNameCompletion, componentNameCompletion, styleFileNameCompletion];
             }
 
             return undefined;
@@ -20,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
     }));
 
     // Create a diagnostics collection for errors
-    const diagnosticCollection = vscode.languages.createDiagnosticCollection('component-rt');
+    const diagnosticCollection = vscode.languages.createDiagnosticCollection('.template');
     context.subscriptions.push(diagnosticCollection);
 
     // Trigger diagnostics when the document is opened or edited
@@ -31,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     function checkDiagnostics(document: vscode.TextDocument) {
-        if (document.languageId !== 'component-rt') {
+        if (document.languageId !== 'template-rt') {
             return;
         }
 

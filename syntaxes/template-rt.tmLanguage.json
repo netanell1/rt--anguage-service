@@ -1,5 +1,5 @@
 {
-  "scopeName": "source.component-rt",
+  "scopeName": "source.template-rt",
   "patterns": [
     {
       "begin": "\\{\\{",

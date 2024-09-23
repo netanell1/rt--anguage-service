@@ -5,27 +5,14 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.Uri.joinPath(context.extensionUri, 'dist', 'server.js').fsPath
 	);
 
-	// Register completion item provider for component-rt.template
+	// Register completion item provider for component-rt.template and style-rt.template
 	context.subscriptions.push(
-		vscode.languages.registerCompletionItemProvider('component-rt', {
+		vscode.languages.registerCompletionItemProvider(['template-rt'], {
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 				const completionItems = [
 					new vscode.CompletionItem('functionName', vscode.CompletionItemKind.Variable),
 					new vscode.CompletionItem('componentName', vscode.CompletionItemKind.Variable),
 					new vscode.CompletionItem('styleFileName', vscode.CompletionItemKind.Variable)
-				];
-				return completionItems;
-			}
-		}, '{{') // Trigger on typing {{
-	);
-
-	// Register completion item provider for style-rt.template
-	context.subscriptions.push(
-		vscode.languages.registerCompletionItemProvider('style-rt', {
-			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-				const completionItems = [
-					new vscode.CompletionItem('className', vscode.CompletionItemKind.Variable),
-					new vscode.CompletionItem('idName', vscode.CompletionItemKind.Variable)
 				];
 				return completionItems;
 			}
@@ -46,7 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// Function to check and set diagnostics
 	function checkDiagnostics(document: vscode.TextDocument, collection: vscode.DiagnosticCollection) {
 		const languageId = document.languageId;
-		if (languageId !== 'component-rt' && languageId !== 'style-rt') {
+		if (languageId !== 'template-rt') {
 			return;
 		}
 
@@ -61,8 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// Find all {{ }} patterns in the line
 			while ((match = regex.exec(lineText)) !== null) {
 				const innerText = match[1].trim();
-				let allowedNames;
-				allowedNames = ['functionName', 'componentName', 'styleFileName'];
+				const allowedNames = ['functionName', 'componentName', 'styleFileName'];
 
 
 				// Validate if the text inside {{ }} is one of the allowed names

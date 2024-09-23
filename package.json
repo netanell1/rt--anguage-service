@@ -17,7 +17,7 @@
   ],
   "main": "./dist/extension.js",
   "activationEvents": [
-    "onLanguage:component-rt"
+    "onLanguage:template-rt"
   ],
   "contributes": {
     "jsonValidation": [
@@ -28,20 +28,21 @@
     ],
     "languages": [
       {
-        "id": "component-rt",
+        "id": "template-rt",
         "extensions": [
-          ".template"
+          "component-rt.template",
+          "style-rt.template"
         ],
         "aliases": [
-          "Component Template"
+          " Template Files"
         ]
       }
     ],
     "grammars": [
       {
-        "language": "component-rt",
-        "scopeName": "source.component-rt",
-        "path": "./syntaxes/component-rt.tmLanguage.json"
+        "language": "template-rt",
+        "scopeName": "source.template-rt",
+        "path": "./syntaxes/template-rt.tmLanguage.json"
       }
     ]
   },
