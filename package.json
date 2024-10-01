@@ -6,7 +6,7 @@
     "type": "git"
   },
   "icon": "assets/icon.jpeg",
-  "publisher": "NL",
+  "publisher": "nl24",
   "description": "Provides auto-completions and validation for react-cli-rt",
   "version": "2.0.0",
   "engines": {
