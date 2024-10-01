@@ -15,7 +15,7 @@
       "type": "string",
       "description": "The style format to use. Choose from predefined options."
     },
-    "moduleStyle": {
+    "useModuleStyle": {
       "type": "boolean",
       "description": "Whether to use CSS modules."
     },
@@ -28,14 +28,32 @@
       "description": "Defines the format of component files."
     },
     "componentFileName": {
-      "type": "string",
-      "description": "Optional custom name for the component file."
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional custom name for the component file, if null the file name will be component name"
     },
     "styleFileName": {
-      "type": "string",
-      "description": "Optional custom name for the style file."
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional custom name for the style file, if null the file name will be component name"
     },
-    "modelSuffix": {
+    "testLibrary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "testing-library",
+        "cypress"
+      ],
+      "description": "Optional test library to add test file for the component, if null no test file will be created ."
+    },
+    "useSuffix": {
       "type": "boolean",
       "description": "Whether to use a model suffix."
     }
@@ -43,7 +61,7 @@
   "required": [
     "language",
     "style",
-    "moduleStyle",
+    "useModuleStyle",
     "componentFileFormat"
   ]
 }
