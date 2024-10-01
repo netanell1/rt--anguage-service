@@ -61,7 +61,6 @@
   "required": [
     "language",
     "style",
-    "useModuleStyle",
     "componentFileFormat"
   ]
 }

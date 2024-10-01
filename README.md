@@ -1,8 +1,8 @@
-# RT Language Service
+# React CLI RT Language Service
 
 ## Overview
 
-`RT Language Service` is a Visual Studio Code extension designed to enhance the development experience for users of the `react-cli-rt` npm package. This extension provides auto-completion, validation, and syntax highlighting for template files and configuration files, making it easier to build React components efficiently.
+`React CLI RT Language Service` is a Visual Studio Code extension designed to enhance the development experience for users of the [react-cli-rt](https://www.npmjs.com/package/react-cli-rt) npm package. This extension provides auto-completion, validation, and syntax highlighting for template files and configuration files, making it easier to build React components efficiently.
 
 ## Features
 
